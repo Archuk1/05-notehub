@@ -1,5 +1,5 @@
 import axios from "axios";
-import type { Note, NoteTag, NoteId } from "../types/note";
+import type { Note, NoteTag} from "../types/note";
 
 axios.defaults.baseURL = 'https://notehub-public.goit.study/api';
 axios.defaults.headers.common['Authorization'] = `Bearer ${import.meta.env.VITE_NOTEHUB_TOKEN}`;
@@ -41,7 +41,7 @@ export async function createNote (noteData : CreateNoteParams ) {
     return response.data;
 }
 
-export async function deleteNote (noteId: NoteId) {
+export async function deleteNote (noteId: string) {
     const response = await axios.delete<Note>(`/notes/${noteId}`);
     return response.data
 }

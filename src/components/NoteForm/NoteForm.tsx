@@ -1,7 +1,7 @@
 import { ErrorMessage, Field, Form, Formik } from 'formik'
 import css from './NoteForm.module.css'
 import * as Yup from "yup";
-import { QueryClient, useMutation } from '@tanstack/react-query';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { createNote } from '../../services/noteService';
 import type { NoteTag } from '../../types/note';
 
@@ -27,7 +27,7 @@ const NoteFormSchema = Yup.object().shape({
   content: Yup.string().max(500),
   tag: Yup.string().required("Please select a tag").oneOf(["Todo", "Work", "Personal", "Meeting", "Shopping"], "Invalid tag selected"),
 });
-    const queryClient = new QueryClient();
+    const queryClient = useQueryClient();
 
      const { mutate, isPending } = useMutation({
     mutationFn: (values: FormValues) => createNote({
@@ -78,7 +78,7 @@ const NoteFormSchema = Yup.object().shape({
         </div>
 
         <div className={css.actions}>
-            <button type="button" className={css.cancelButton} onClick={onCancel || onSuccess}>
+            <button type="button" className={css.cancelButton} onClick={onCancel}>
             Cancel
             </button>
             <button
