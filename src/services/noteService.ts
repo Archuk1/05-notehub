@@ -30,7 +30,7 @@ export async function fetchNotes({search = '',page= 1,perPage = 12}: FetchNotesP
 
 interface CreateNoteParams {
     title: string,
-    content?: string,
+    content: string,
     tag: NoteTag
 }
 
