@@ -7,7 +7,7 @@ import Modal from "../Modal/Modal";
 import NoteForm from "../NoteForm/NoteForm";
 import SearchBox from "../SearchBox/SearchBox";
 import { useDebouncedCallback } from "use-debounce";
-import { fetchNotes } from "../../sevices/noteService";
+import { fetchNotes } from "../../services/noteService";
 
 
 function App() {

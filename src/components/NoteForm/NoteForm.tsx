@@ -2,7 +2,7 @@ import { ErrorMessage, Field, Form, Formik } from 'formik'
 import css from './NoteForm.module.css'
 import * as Yup from "yup";
 import { QueryClient, useMutation } from '@tanstack/react-query';
-import { createNote } from '../../sevices/noteService';
+import { createNote } from '../../services/noteService';
 import type { NoteTag } from '../../types/note';
 
 interface FormValues {

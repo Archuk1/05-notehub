@@ -2,7 +2,7 @@
 import css from './NoteList.module.css'
 import type { Note, NoteId } from '../../types/note';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
-import { deleteNote } from '../../sevices/noteService';
+import { deleteNote } from '../../services/noteService';
 
 interface NoteListProps {
     notes: Note[],
